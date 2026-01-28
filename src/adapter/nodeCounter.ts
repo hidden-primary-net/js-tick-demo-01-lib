@@ -1,15 +1,24 @@
-import { type WorkerLike } from "./types";
+import type { Worker } from "node:worker_threads";
+import type { WorkerLike } from "./types";
 
 export class NodeCounter {
-    private worker: WorkerLike;
     private listeners: Array<(v: number) => void> = [];
+    private worker: WorkerLike | Worker;
 
-    constructor(worker: WorkerLike) {
+    constructor(worker: WorkerLike | Worker) {
         this.worker = worker;
 
-        this.worker.on["message"] = (v: any) => {
-            this.listeners.forEach((cb) => cb(v));
-        };
+        if (isMockWorker(worker)) {
+            worker.on.message = (v: any) => {
+                this.listeners.forEach((cb) => cb(v));
+            };
+        } else {
+            worker.on("message", (v) => { this.listeners.forEach((cb) => cb(v)); });
+        }
+    }
+
+    private emit(v: any) {
+        this.listeners.forEach((cb) => cb(v));
     }
 
     start() {
@@ -27,4 +36,9 @@ export class NodeCounter {
     onTick(cb: (v: number) => void) {
         this.listeners.push(cb);
     }
+}
+
+// Type Guard für MockWorker
+function isMockWorker(worker: any): worker is WorkerLike {
+    return worker && "on" in worker && "message" in worker.on;
 }

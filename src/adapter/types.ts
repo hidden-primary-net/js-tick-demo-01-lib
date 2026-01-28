@@ -1,4 +1,7 @@
 export interface WorkerLike {
-    on: { [event: string]: ((data: any) => void) | undefined };
+    on: {
+        message?: (data: any) => void;
+        [event: string]: ((data: any) => void) | undefined
+    };
     postMessage(msg: any): void;
 }

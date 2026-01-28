@@ -1,8 +1,10 @@
-import { type WorkerLike } from "./types";
+import type { Worker } from "node:worker_threads";
+import type { WorkerLike } from "./types";
 export declare class NodeCounter {
-    private worker;
     private listeners;
-    constructor(worker: WorkerLike);
+    private worker;
+    constructor(worker: WorkerLike | Worker);
+    private emit;
     start(): void;
     stop(): void;
     reset(): void;
