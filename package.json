@@ -4,7 +4,9 @@
   "main": "./dist/index.js",
   "type": "module",
   "types": "./dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,6 +16,7 @@
   "license": "GPL-3.0-or-later",
   "description": "Demo of a simple counter library utilizing a web worker",
   "devDependencies": {
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
   }
 }
