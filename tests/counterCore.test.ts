@@ -24,4 +24,17 @@ describe("CounterCore", () => {
 
         expect(counter.getValue()).toBe(0);
     });
+
+    it("notifies listeners on tick", () => {
+        const values: number[] = [];
+
+        /**
+         * Hands in one possible implementation of a `TickListener`.
+         */
+        counter.onTick((v) => values.push(v));
+        counter.next();
+        counter.next();
+
+        expect(values).toEqual([1, 2]);
+    });
 });
