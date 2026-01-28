@@ -1,0 +1,1 @@
+{"version":3,"file":"browserCounter.d.ts","sourceRoot":"","sources":["../../src/adapter/browserCounter.ts"],"names":[],"mappings":"AAAA,qBAAa,cAAc;IACvB,OAAO,CAAC,MAAM,CAAS;IACvB,OAAO,CAAC,SAAS,CAAkC;gBAEvC,MAAM,EAAE,MAAM;IAS1B,KAAK;IAIL,IAAI;IAIJ,KAAK;IAIL,MAAM,CAAC,EAAE,EAAE,CAAC,CAAC,EAAE,MAAM,KAAK,IAAI;CAGjC"}
