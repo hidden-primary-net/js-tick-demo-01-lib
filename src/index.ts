@@ -1,3 +1,3 @@
-export { CounterCore } from "./core/counter";
+export type { WorkerLike } from "./adapter/types";
 export { BrowserCounter } from "./adapter/browserCounter";
 export { NodeCounter } from "./adapter/nodeCounter";
