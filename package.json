@@ -16,6 +16,7 @@
   "license": "GPL-3.0-or-later",
   "description": "Demo of a simple counter library utilizing a web worker",
   "devDependencies": {
+    "@types/node": "^25.0.10",
     "typescript": "^5.9.3",
     "vitest": "^4.0.18"
   }
