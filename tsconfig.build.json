@@ -3,9 +3,14 @@
     "compilerOptions": {
         "outDir": "dist",
         "rootDir": "src",
+        "module": "esnext",
+        "target": "es2020",
         "declaration": true,
         "declarationMap": true,
         "sourceMap": true,
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
         "noEmit": false
     },
     "include": [

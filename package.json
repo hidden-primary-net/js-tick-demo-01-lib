@@ -14,7 +14,7 @@
     }
   },
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "build": "tsup src/index.ts src/worker/counter.worker.ts --format esm,cjs --dts --out-dir dist",
     "test": "vitest"
   },
   "keywords": [],
@@ -23,6 +23,7 @@
   "description": "Demo of a simple counter library utilizing a web worker",
   "devDependencies": {
     "@types/node": "^25.0.10",
+    "tsup": "^8.5.1",
     "typescript": "^5.9.3",
     "vitest": "^4.0.18"
   }

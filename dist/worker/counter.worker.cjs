@@ -1,3 +1,5 @@
+"use strict";
+
 // src/core/counter.ts
 var CounterCore = class {
   constructor() {
