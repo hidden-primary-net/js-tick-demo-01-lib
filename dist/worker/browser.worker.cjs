@@ -1,3 +1,5 @@
+"use strict";
+
 // src/core/counter.ts
 var CounterCore = class {
   constructor() {
@@ -20,7 +22,7 @@ var CounterCore = class {
   }
 };
 
-// src/worker/counter.worker.ts
+// src/worker/browser.worker.ts
 var counter = new CounterCore();
 var intervalId;
 counter.onTick((value) => {
